@@ -25,11 +25,6 @@ const getListsFromFile = async (path: string) => {
 }
 
 const getOccurences = (target: number, list: number[]) => {
-  // const occurences = 0
-  // list.forEach(cell => {
-
-  // })
-
   return list.filter(x => x === target).length
 }
 
@@ -41,11 +36,6 @@ const getSimilarityFromLists = (la: number[], lb: number[]) => {
 
   return similarity
 }
-
-
-// getListsFromFile('input.txt').then(([la, lb]) => {
-//   console.log(getDistanceFromLists(la, lb))
-// })
 
 getListsFromFile('input.txt').then(([la, lb]) => {
   console.log('Distance : ', getDistanceFromLists(la, lb))
