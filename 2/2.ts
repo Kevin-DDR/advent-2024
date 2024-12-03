@@ -1,5 +1,3 @@
-
-
 const getReportsFromFile = async (path: string) => {
   const text = await Deno.readTextFile(path);
   const lines = text.split(/\r?\n|\r|\n/g)
