@@ -84,12 +84,12 @@ const countX = (grid: string[][]) => {
   return count
 }
 
-// Not an elegant solution, but I'm not seeing a nicer way of doing it.
 const bruteForce = (grid: string[][]) => {
   let count = 0
-  for (let j = 0 ; j < grid.length; j++) {
-    for (let i = 0; i < grid[j].length; i++) {
-      if (!['^', 'X', '#'].includes(grid[j][i])) {
+  const finalGrid = move(JSON.parse(JSON.stringify(grid))).grid
+  for (let j = 0 ; j < finalGrid.length; j++) {
+    for (let i = 0; i < finalGrid[j].length; i++) {
+      if (finalGrid[j][i] === 'X') {
         const cpy = JSON.parse(JSON.stringify((grid)))
         cpy[j][i] = '#'
         if(move(cpy).infinite) count++
